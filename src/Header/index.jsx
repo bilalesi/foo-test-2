@@ -3,13 +3,13 @@ import cn from 'classnames';
 import styles from "./style.module.scss";
 import { IoIosNotifications, IoMdPersonAdd, IoIosArrowDown, IoIosMenu, } from 'react-icons/io';
 import { GoSettings } from 'react-icons/go';
+import { BsLayoutSidebarInset } from 'react-icons/bs';
+
 import userImage from '../Assets/pngs/user50x50.png'
-import { useStateHeaderContext, useDispatchHeaderContext, displaySubMenuLeftAction } from '../Contexts'
-import { useMediaQuery } from 'react-responsive'
+import { useDispatchHeaderContext, displaySubMenuLeftAction } from '../Contexts'
 
 const Header = () => {
     const [dropOpen, setDropOpen] = useState(false);
-    const { displayLeftMenuBtn } = useStateHeaderContext();
     const dispatch = useDispatchHeaderContext();
     const handleMenuClick = () => {
         setDropOpen(st => !st)
@@ -17,11 +17,11 @@ const Header = () => {
     const handleSubMenuDisplay = (ev) => {
         dispatch(displaySubMenuLeftAction())
     }
-    const isMediaChanged = useMediaQuery({ maxWidth: '774px' }, function(isMediaChanged){
-        if(!isMediaChanged){
-            dispatch(displaySubMenuLeftAction(false))
-         }
-    })
+    // const isMediaChanged = useMediaQuery({ maxWidth: '774px' }, function(isMediaChanged){
+    //     if(!isMediaChanged){
+    //         dispatch(displaySubMenuLeftAction(false))
+    //      }
+    // })
     
     return (
         <div className={styles.HeaderContainer}>
@@ -29,7 +29,7 @@ const Header = () => {
                 <div className={styles.left}>
                     <button className={cn(styles.iconMenu, styles.leftMenuBtn)} onClick={handleSubMenuDisplay}>
                         <span className={styles.iconWrapper}>
-                            <IoIosMenu/>
+                            <BsLayoutSidebarInset size={22} color={'#136bf5'}/>
                         </span>                       
                     </button>                
                 </div>

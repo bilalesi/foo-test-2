@@ -20,6 +20,8 @@ const StateReducer = ( state = defaultState , action) => {
                 ...state,
                 displaySubMenuLeft: typeof action.payload !== 'undefined' ? action.payload : !state.displaySubMenuLeft
             }
+        default:
+            return state;
     }
 }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 
 const useFocus = (ref, options) => {
@@ -8,7 +8,7 @@ const useFocus = (ref, options) => {
 
     const onEnterRef = useRef(onFucus);
     const onLeaveRef = useRef(onFocusLeave);
-
+    
     const onMouseEnter = () => {
         if(onEnterRef.current) onEnterRef.current();
         setFocused(true)
@@ -18,12 +18,13 @@ const useFocus = (ref, options) => {
         setFocused(false);
     }
     useEffect(() => {
+        const reference = ref.current;
         
-        ref.current.addEventListener('focus', onMouseEnter);
-        ref.current.addEventListener('blur', onMouseLeave);
+        reference.addEventListener('focus', onMouseEnter);
+        reference.addEventListener('blur', onMouseLeave);
         return () => {
-            ref.current.removeEventListener('focus', onMouseEnter);
-            ref.current.removeEventListener('blur', onMouseLeave);
+            reference.removeEventListener('focus', onMouseEnter);
+            reference.removeEventListener('blur', onMouseLeave);
         }
 
     }, [ref]);

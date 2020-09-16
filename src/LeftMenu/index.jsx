@@ -5,7 +5,6 @@ import { Layout, Button } from '../sharedComponents'
 import {FaUserTie, FaMedrt, FaUsers, FaLaptop} from 'react-icons/fa'
 import { BrowserRouter as Router, NavLink} from 'react-router-dom'
 import { useStateHeaderContext, useDispatchHeaderContext, displaySubMenuLeftAction } from '../Contexts'
-import { IoIosClose } from 'react-icons/io';
 
 
 const LeftMenu = () => {

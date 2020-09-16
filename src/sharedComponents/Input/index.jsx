@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import cn from 'classnames';
 import InputStyles from './style.module.scss';
-import { IoIosClose } from "react-icons/io";
 import { useFocus } from '../../hooks'
 // interface IInput {
 //     id?: string,
@@ -26,9 +25,7 @@ const Input = ({ id, name, type, placeholder, label,
          const handleDataChange = (ev) =>{
             setData(st => ev.target?.value);
          }
-         const handleClearAction = (ev)  =>{
-            setData(st  => '');
-         }
+         
          useFocus(inputRef, {
              onFucus: () =>{
                 setInputFocused(st => true)
@@ -52,7 +49,6 @@ const Input = ({ id, name, type, placeholder, label,
                         </div>
                     }                        
                     <input {...{id, type, name, placeholder,}} 
-                        aria-expanded={ariaExpanded} 
                         aria-haspopup={ariaHasPopUp}
                         aria-autoComplete={ariaAutocomplete}
                         onChange={handleDataChange}
