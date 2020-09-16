@@ -1,0 +1,29 @@
+@import '../../Assets/scss/global.scss';
+
+.Button{
+    // background-color: #fff ;
+    background-color: #136bf5;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    width: 100;
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 18px;
+    transition: all .35s ease;
+    text-decoration: none;
+    border: 1px solid #136bf5;
+    outline: none;
+    &.outlined{
+        background-color: #fff;
+        color: rgb(34, 34, 34);
+    }
+}
+
+.Button:hover{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    
+    background-color: #f3f8ff;
+    color: #136bf5;
+}

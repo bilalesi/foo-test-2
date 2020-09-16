@@ -1,0 +1,60 @@
+.Layout{
+    margin-bottom: 20px;
+    height: 100%;
+}
+.InnerLayout{
+    border: 1px solid transparent;
+    border-radius: 8px;
+    
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px;
+    height: 100%;
+    padding  : 8px 14px;
+}
+.LayoutHeader{
+    margin-bottom: 8px;
+}
+.InnerLayoutHeader{
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #136af513;
+    &.notBordered{
+        border-bottom: none;
+    }
+}
+.LayoutHeader__Title,
+.LayoutHeader__Actions{
+    padding: 3px 10px;
+}
+.LayoutHeader__Title{
+    flex: 1 0 60%;
+    display: grid;
+    .LayoutHeader__Title_text{
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: bold;
+    }
+}
+.LayoutHeader__Actions{
+    flex: grid;
+    align-items: center;
+    justify-items: end;
+    justify-content: end;
+}
+.content{
+    display: block;
+    position: relative;
+    
+}
+@media all and (min-width: 774px){
+    .InnerLayout{
+        padding: 15px;
+    }
+}
+@media all and (min-width: 992px){
+    .InnerLayout{
+        padding: 20px 34px;
+    }
+}

@@ -1,0 +1,102 @@
+@import '../../Assets/scss/global.scss';
+
+.InputContainer{
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.InputLayout{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 'label' 'input';
+    &.labelNotExist{
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'input';   
+    }
+}
+.label{
+    grid-area: label;
+    text-align: left;
+    margin-left: 5px;
+}
+.inputWrapper, div[class^="input_form_"]{
+    grid-area: input;
+    display: grid;
+    grid-template-columns: 30px auto 30px;
+    grid-template-areas: 'iconBefore input iconAfter';
+    gap: 3px;
+    // place-items: center;
+    border: 1px solid $secondary-color; 
+    // height: 48px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 5px 3px;
+    height: 35px;
+    width: 100%;
+    &.focused{
+        border: $Tema-light;
+        box-shadow: rgb(115, 197, 212) 0px 0px 0px 2px inset;
+    }
+    &.leftIconExist{
+        grid-template-columns: auto 40px;
+        grid-template-areas: 'input iconAfter';
+        .input{
+            margin-left: 10px;
+        }
+        .icon{
+            width: 35px;
+            height: 35px;
+            // svg{
+            //     width: inherit;
+            //     height: inherit;
+            // }
+        }
+    }
+   
+    .input{
+        grid-area: input;
+        outline: none;
+        background-color: inherit;
+        border: none;
+        padding-left: 3px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .icon{
+        // width: 30px;
+        // height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        svg{
+            width: inherit;
+            height: inherit;
+        }
+    }
+    .before{
+        grid-area: iconBefore;
+    }
+    .after{
+        grid-area: iconAfter;
+        cursor: pointer;
+    }
+}
+.tag{
+    grid-area: tag;
+    p{
+        margin: 0;
+        text-align: left;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 200;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+}
+.actionIcon{
+    border: none;
+    outline: none;
+    background: none;
+}

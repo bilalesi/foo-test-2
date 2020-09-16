@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.scss';
+import { NavLink, BrowserRouter as Router, Route } from 'react-router-dom'
+import Header from './Header';
+import Content from './Content'
+import LeftMenu from './LeftMenu';
+import { HeaderContextProvider } from './Contexts'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+		<Router>
+			<HeaderContextProvider>
+				<Header></Header>
+				<div className={styles.body}>
+					<LeftMenu/>
+					<div className={styles.content}>
+						<Content/>
+						<Content/>
+						<Content/>
+					</div>
+				</div>
+			</HeaderContextProvider>
+
+			<Route path='/AccoutSettings'></Route>
+			<Route exact path='/'></Route>
+		</Router>
     </div>
   );
 }
